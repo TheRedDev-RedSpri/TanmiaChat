@@ -1,6 +1,6 @@
 package fr.redspri.tanmiachat.client.window;
 
-import fr.redspri.tanmiachat.client.WindowManager;
+import fr.redspri.tanmiachat.client.TanmiaChatClient;
 import fr.redspri.tanmiachat.client.window.windows.LoginWindow;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
@@ -17,8 +17,8 @@ public abstract class Window {
 
     public void open() throws IOException {
         Parent fxml = FXMLLoader.load(getFXMLRessource());
-        WindowManager.getPrimaryStage().setScene(new Scene(fxml));
-        WindowManager.getPrimaryStage().show();
+        TanmiaChatClient.getPrimaryStage().setScene(new Scene(fxml));
+        TanmiaChatClient.getPrimaryStage().show();
     }
 
     public void show(Node source) throws IOException {

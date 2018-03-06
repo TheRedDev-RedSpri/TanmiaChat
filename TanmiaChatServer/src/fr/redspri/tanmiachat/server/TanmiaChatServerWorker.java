@@ -24,7 +24,7 @@ public class TanmiaChatServerWorker extends SimpleChannelInboundHandler<String> 
         ctx.pipeline().get(SslHandler.class).handshakeFuture().addListener(
                 future -> {
                     clients.add(ctx.channel());
-                    sendMessage(new MessageObject("SERVER",  "", "Connexion réussie, bienvenue! NOTE: Pour pouvoir envoyer des messages, le mot de passe doit être correct!"), ctx);
+                    sendMessage(new MessageObject("SERVEUR",  "", "Connexion réussie, bienvenue! NOTE: Pour pouvoir envoyer des messages, le mot de passe doit être correct!"), ctx);
                      }
         );
     }
@@ -51,7 +51,7 @@ public class TanmiaChatServerWorker extends SimpleChannelInboundHandler<String> 
         System.out.println("Receiving \"" + object.getContent() + "\" by \"" + object.getAuthor() + "\"" + " from " + context.channel().id().asLongText());
 
         if (!Objects.equals(object.getPassword(), server.getServerSettings().getPass())) {
-            sendMessage(new MessageObject("SERVER", "", "Mot de passe incorrect, le message n'est pas envoyé!"), context);
+            sendMessage(new MessageObject("SERVEUR", "", "Mot de passe incorrect, le message n'est pas envoyé!"), context);
             return;
         }
         clients.forEach(c -> {

@@ -37,7 +37,7 @@
             </JFXTextArea>
          </children>
       </AnchorPane>
-      <Label fx:id="content" alignment="TOP_LEFT" contentDisplay="TOP" layoutX="13.0" layoutY="14.0" prefHeight="283.0" prefWidth="575.0" text="test" textFill="WHITE" wrapText="true">
+      <Label fx:id="content" alignment="TOP_LEFT" contentDisplay="TOP" layoutX="13.0" layoutY="14.0" prefHeight="283.0" prefWidth="575.0" text="Chargement..." textFill="WHITE" wrapText="true">
          <effect>
             <Bloom threshold="0.01" />
          </effect>

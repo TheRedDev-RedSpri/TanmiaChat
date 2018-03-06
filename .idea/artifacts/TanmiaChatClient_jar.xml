@@ -1,0 +1,13 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="TanmiaChatClient:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/TanmiaChatClient_jar</output-path>
+    <root id="archive" name="TanmiaChatClient.jar">
+      <element id="module-output" name="TanmiaChatClient" />
+      <element id="module-output" name="TanmiaChatCommon" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/../jfoenix-0.0.0-SNAPSHOT.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/../gson-2.8.1.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/../netty-all.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/../lombok.jar" path-in-jar="/" />
+    </root>
+  </artifact>
+</component>

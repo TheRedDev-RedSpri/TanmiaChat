@@ -38,8 +38,8 @@ public class TanmiaChatClientConnector {
             boot.group(group)
             .channel(NioSocketChannel.class)
             .handler(new TanmiaChatClientCreator(sslContext, settings.getSettings(), this));
-            chatWindow = loginWindow.connected();
             ch = boot.connect(settings.getSettings().getHost(), settings.getSettings().getPort()).sync().channel();
+            chatWindow = loginWindow.connected();
             future = null;
             BufferedReader in = new BufferedReader(new InputStreamReader(System.in));
             for (;;) {

@@ -8,6 +8,7 @@ import javafx.application.Platform;
 import lombok.AllArgsConstructor;
 
 import java.util.ArrayList;
+import java.util.concurrent.TimeUnit;
 
 @AllArgsConstructor
 public class TanmiaChatClientWorker extends SimpleChannelInboundHandler<String> {
@@ -16,9 +17,10 @@ public class TanmiaChatClientWorker extends SimpleChannelInboundHandler<String> 
 
     @Override
     protected void channelRead0(ChannelHandlerContext context, String serialized) throws Exception {
+        if (messages.size() < 1) TimeUnit.SECONDS.sleep(1);
         MessageObject object = MessageObject.deserialize(serialized);
         System.out.println(object.getAuthor() + " : " + object.getContent());
-        if (messages.size() < 15) messages.add(object.getAuthor() + " : " + object.getContent());
+        if (messages.size() < 13) messages.add(object.getAuthor() + " : " + object.getContent());
         else {
             messages.remove(0);
             messages.add(object.getAuthor() + " : " + object.getContent());
@@ -26,7 +28,7 @@ public class TanmiaChatClientWorker extends SimpleChannelInboundHandler<String> 
         Platform.runLater(() -> {
             ChatWindow.getInstance().content.setText("");
             for (String s : messages) {
-                ChatWindow.getInstance().content.setText(ChatWindow.getInstance().content.getText() + "\n" + s);
+                ChatWindow.getInstance().content.setText(ChatWindow.getInstance().content.getText() + s + "\n");
             }
         });
     }
