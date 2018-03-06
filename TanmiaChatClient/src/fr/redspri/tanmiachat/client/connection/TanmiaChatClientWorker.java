@@ -12,7 +12,6 @@ import java.util.concurrent.TimeUnit;
 
 @AllArgsConstructor
 public class TanmiaChatClientWorker extends SimpleChannelInboundHandler<String> {
-    private TanmiaChatClientConnector connector;
     final ArrayList<String> messages = new ArrayList<>();
 
     @Override
@@ -34,7 +33,7 @@ public class TanmiaChatClientWorker extends SimpleChannelInboundHandler<String> 
     }
 
     @Override
-    public void exceptionCaught(ChannelHandlerContext ctx, Throwable cause) throws Exception {
+    public void exceptionCaught(ChannelHandlerContext ctx, Throwable cause) {
         cause.printStackTrace();
         ctx.close();
     }
