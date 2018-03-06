@@ -14,7 +14,6 @@ import io.netty.handler.ssl.SslContext;
 import io.netty.handler.ssl.SslContextBuilder;
 import io.netty.handler.ssl.util.InsecureTrustManagerFactory;
 import lombok.AllArgsConstructor;
-import lombok.Getter;
 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
