@@ -1,54 +1,64 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.paint.*?>
-<?import java.lang.*?>
+<!--suppress JavaFxDefaultTag -->
 <?import com.jfoenix.controls.*?>
-<?import javafx.scene.effect.*?>
-<?import javafx.scene.text.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.image.*?>
-<?import javafx.scene.layout.*?>
-
-<AnchorPane prefHeight="424.0" prefWidth="407.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="fr.redspri.tanmiachat.client.window.windows.LoginWindow">
-   <children>
-      <ImageView fitHeight="433.0" fitWidth="422.0" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@TanmiaLogo.png" />
-         </image>
-      </ImageView>
-      <AnchorPane opacity="0.92" prefHeight="424.0" prefWidth="422.0" style="-fx-background-color: #232323;">
-         <children>
-            <Label layoutX="104.0" layoutY="14.0" text="TanmiaChat Connexion" textAlignment="CENTER" textFill="WHITE" textOverrun="CLIP" wrapText="true">
-               <font>
-                  <Font name="Agency FB Bold" size="27.0" />
-               </font>
-               <effect>
-                  <Bloom />
-               </effect>
-            </Label>
-            <JFXTextField fx:id="ip" focusColor="#1c98ae" focusTraversable="false" labelFloat="true" layoutX="27.0" layoutY="74.0" prefHeight="25.0" prefWidth="278.0" promptText="Adresse du serveur" style="-fx-text-inner-color: WHITE; -fx-label-inner-color: WHITE;" unFocusColor="#37682e" />
-            <JFXTextField fx:id="port" focusColor="#1c98ae" focusTraversable="false" labelFloat="true" layoutX="324.0" layoutY="74.0" prefHeight="25.0" prefWidth="64.0" promptText="Port" style="-fx-text-inner-color: WHITE; -fx-label-inner-color: WHITE;" text="25333" unFocusColor="#37682e" />
-            <JFXTextField fx:id="username" focusColor="#1c98ae" focusTraversable="false" labelFloat="true" layoutX="27.0" layoutY="189.0" prefHeight="25.0" prefWidth="361.0" promptText="Nom d'utilisateur" style="-fx-text-inner-color: WHITE; -fx-label-inner-color: WHITE;" unFocusColor="#37682e" />
-            <JFXPasswordField fx:id="password" focusColor="#1c98ae" focusTraversable="false" labelFloat="true" layoutX="27.0" layoutY="134.0" prefHeight="25.0" prefWidth="361.0" promptText="Mot de passe du serveur" style="-fx-text-inner-color: WHITE; -fx-label-inner-color: WHITE;" styleClass="password" unFocusColor="#37682e" />
-            <JFXButton fx:id="button" layoutX="27.0" layoutY="262.0" onMouseClicked="#connect" prefHeight="31.0" prefWidth="361.0" style="-fx-background-color: #0a033a;" text="Connexion" textFill="WHITE">
-               <ripplerFill>
-                  <LinearGradient endX="1.0" endY="1.0">
-                     <stops>
-                        <Stop color="#0084ff" />
-                        <Stop color="#47a3a8" offset="1.0" />
-                     </stops>
-                  </LinearGradient>
-               </ripplerFill>
-               <font>
-                  <Font size="15.0" />
-               </font>
-            </JFXButton>
-            <Label fx:id="info" alignment="CENTER" layoutX="27.0" layoutY="315.0" prefHeight="100.0" prefWidth="361.0" textAlignment="CENTER" visible="false" wrapText="true">
-               <font>
-                  <Font size="14.0" />
-               </font>
-            </Label>
-         </children>
-      </AnchorPane>
-   </children>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.effect.Bloom?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.paint.LinearGradient?>
+<?import javafx.scene.paint.Stop?>
+<?import javafx.scene.text.Font?>
+<AnchorPane xmlns:fx="http://javafx.com/fxml/1" prefHeight="424.0" prefWidth="407.0" xmlns="http://javafx.com/javafx/8"
+            fx:controller="fr.redspri.tanmiachat.client.window.windows.LoginWindow">
+    <ImageView fitHeight="433.0" fitWidth="422.0" pickOnBounds="true" preserveRatio="true">
+        <Image url="@TanmiaLogo.png"/>
+    </ImageView>
+    <AnchorPane opacity="0.92" prefHeight="424.0" prefWidth="422.0" style="-fx-background-color: #232323;">
+        <Label layoutX="104.0" layoutY="14.0" text="TanmiaChat Connexion" textAlignment="CENTER" textFill="WHITE"
+               textOverrun="CLIP" wrapText="true">
+            <font>
+                <Font name="Agency FB Bold" size="27.0"/>
+            </font>
+            <effect>
+                <Bloom/>
+            </effect>
+        </Label>
+        <JFXTextField fx:id="ip" focusColor="#1c98ae" focusTraversable="false" labelFloat="true" layoutX="27.0"
+                      layoutY="74.0" prefHeight="25.0" prefWidth="278.0" promptText="Adresse du serveur"
+                      style="-fx-text-inner-color: WHITE; -fx-label-inner-color: WHITE;" unFocusColor="#37682e"/>
+        <JFXTextField fx:id="port" focusColor="#1c98ae" focusTraversable="false" labelFloat="true" layoutX="324.0"
+                      layoutY="74.0" prefHeight="25.0" prefWidth="64.0" promptText="Port"
+                      style="-fx-text-inner-color: WHITE; -fx-label-inner-color: WHITE;" text="25333"
+                      unFocusColor="#37682e"/>
+        <JFXTextField fx:id="username" focusColor="#1c98ae" focusTraversable="false" labelFloat="true" layoutX="27.0"
+                      layoutY="189.0" prefHeight="25.0" prefWidth="361.0" promptText="Nom d'utilisateur"
+                      style="-fx-text-inner-color: WHITE; -fx-label-inner-color: WHITE;" unFocusColor="#37682e"/>
+        <JFXPasswordField fx:id="password" focusColor="#1c98ae" focusTraversable="false" labelFloat="true"
+                          layoutX="27.0" layoutY="134.0" prefHeight="25.0" prefWidth="361.0"
+                          promptText="Mot de passe du serveur"
+                          style="-fx-text-inner-color: WHITE; -fx-label-inner-color: WHITE;" styleClass="password"
+                          unFocusColor="#37682e"/>
+        <JFXButton fx:id="button" layoutX="27.0" layoutY="262.0" onMouseClicked="#connect" prefHeight="31.0"
+                   prefWidth="361.0" style="-fx-background-color: #0a033a;" text="Connexion" textFill="WHITE">
+            <ripplerFill>
+                <LinearGradient>
+                    <stops>
+                        <Stop color="#0084ff"/>
+                        <Stop color="#47a3a8" offset="1.0"/>
+                    </stops>
+                </LinearGradient>
+            </ripplerFill>
+            <font>
+                <Font size="15.0"/>
+            </font>
+        </JFXButton>
+        <Label fx:id="info" alignment="CENTER" layoutX="27.0" layoutY="315.0" prefHeight="100.0" prefWidth="361.0"
+               textAlignment="CENTER" visible="false" wrapText="true">
+            <font>
+                <Font size="14.0"/>
+            </font>
+        </Label>
+    </AnchorPane>
 </AnchorPane>

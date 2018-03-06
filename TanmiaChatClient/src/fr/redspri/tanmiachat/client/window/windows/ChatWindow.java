@@ -15,7 +15,8 @@ public class ChatWindow extends Window {
     @Getter@Setter
     private static ChatWindow instance;
     public Label content;
-    public JFXTextArea tosend;
+    @FXML
+    private JFXTextArea tosend;
 
     public ChatWindow() {
         instance = this;

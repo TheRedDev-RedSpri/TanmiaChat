@@ -12,18 +12,17 @@ import io.netty.handler.ssl.SslContext;
 import lombok.AllArgsConstructor;
 
 @AllArgsConstructor
-public class TanmiaChatClientCreator extends ChannelInitializer<SocketChannel> {
+class TanmiaChatClientCreator extends ChannelInitializer<SocketChannel> {
     private SslContext sslContext;
     private ServerSettings settings;
-    private TanmiaChatClientConnector connector;
 
     @Override
-    protected void initChannel(SocketChannel channel) throws Exception {
+    protected void initChannel(SocketChannel channel) {
         ChannelPipeline pipeline = channel.pipeline();
         pipeline.addLast(sslContext.newHandler(channel.alloc(), settings.getHost(), settings.getPort()));
         pipeline.addLast(new DelimiterBasedFrameDecoder(8192, Delimiters.lineDelimiter()));
         pipeline.addLast(new StringDecoder());
         pipeline.addLast(new StringEncoder());
-        pipeline.addLast(new TanmiaChatClientWorker(connector));
+        pipeline.addLast(new TanmiaChatClientWorker());
     }
 }

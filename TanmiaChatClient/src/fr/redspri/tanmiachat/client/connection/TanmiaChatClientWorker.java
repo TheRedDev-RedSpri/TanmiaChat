@@ -11,8 +11,8 @@ import java.util.ArrayList;
 import java.util.concurrent.TimeUnit;
 
 @AllArgsConstructor
-public class TanmiaChatClientWorker extends SimpleChannelInboundHandler<String> {
-    final ArrayList<String> messages = new ArrayList<>();
+class TanmiaChatClientWorker extends SimpleChannelInboundHandler<String> {
+    private final ArrayList<String> messages = new ArrayList<>();
 
     @Override
     protected void channelRead0(ChannelHandlerContext context, String serialized) throws Exception {

@@ -10,14 +10,13 @@ import io.netty.handler.ssl.SslHandler;
 import io.netty.util.concurrent.GlobalEventExecutor;
 import lombok.AllArgsConstructor;
 
-import java.net.InetAddress;
 import java.util.Objects;
 
 @AllArgsConstructor
-public class TanmiaChatServerWorker extends SimpleChannelInboundHandler<String> {
+class TanmiaChatServerWorker extends SimpleChannelInboundHandler<String> {
     TanmiaChatServer server;
 
-    static final ChannelGroup clients = new DefaultChannelGroup(GlobalEventExecutor.INSTANCE);
+    private static final ChannelGroup clients = new DefaultChannelGroup(GlobalEventExecutor.INSTANCE);
 
     @Override
     public void channelActive(ChannelHandlerContext ctx) {
@@ -29,12 +28,12 @@ public class TanmiaChatServerWorker extends SimpleChannelInboundHandler<String> 
         );
     }
 
-    public void sendMessage(MessageObject object, ChannelHandlerContext context) {
+    private void sendMessage(MessageObject object, ChannelHandlerContext context) {
         System.out.println("Sending \"" + object.getContent() + "\" by \"" + object.getAuthor() + "\"" + " to " + context.channel().id().asLongText());
         context.writeAndFlush(object.serialize() + "\n");
     }
 
-    public void sendMessage(MessageObject object, Channel context) {
+    private void sendMessage(MessageObject object, Channel context) {
         System.out.println("Sending \"" + object.getContent() + "\" by \"" + object.getAuthor() + "\"" + " to " + context.id().asLongText());
         context.writeAndFlush(object.serialize() + "\n");
     }
@@ -42,7 +41,7 @@ public class TanmiaChatServerWorker extends SimpleChannelInboundHandler<String> 
     @Override
     public void channelRead0(ChannelHandlerContext context, String serialized) {
         System.out.println("CC");
-        if (serialized == "leave") {
+        if (Objects.equals(serialized, "leave")) {
             context.close();
             return;
         }
@@ -55,7 +54,7 @@ public class TanmiaChatServerWorker extends SimpleChannelInboundHandler<String> 
             return;
         }
         clients.forEach(c -> {
-            if (c != context.channel());
+            context.channel();
             sendMessage(object, c);
         });
     }

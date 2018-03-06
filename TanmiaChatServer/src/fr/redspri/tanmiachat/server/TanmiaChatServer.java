@@ -12,12 +12,12 @@ import io.netty.handler.ssl.SslContextBuilder;
 import io.netty.handler.ssl.util.SelfSignedCertificate;
 import lombok.Getter;
 
-public class TanmiaChatServer {
+class TanmiaChatServer {
     @Getter
-    private ServerSettings serverSettings;
-    private boolean running;
+    private final ServerSettings serverSettings;
+    private final boolean running;
 
-    public TanmiaChatServer(ServerSettings serverSettings) {
+    private TanmiaChatServer(ServerSettings serverSettings) {
         this.serverSettings = serverSettings;
         running = false;
     }
@@ -34,7 +34,7 @@ public class TanmiaChatServer {
         }
     }
 
-    public void start() throws Exception {
+    private void start() throws Exception {
         if (running) return;
         SelfSignedCertificate ssl = new SelfSignedCertificate();
         SslContext sslContext = SslContextBuilder.forServer(ssl.certificate(), ssl.privateKey()).build(); //on crypte les données

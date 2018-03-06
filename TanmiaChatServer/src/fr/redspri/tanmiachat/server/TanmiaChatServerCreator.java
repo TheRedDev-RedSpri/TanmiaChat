@@ -9,16 +9,15 @@ import io.netty.handler.codec.string.StringDecoder;
 import io.netty.handler.codec.string.StringEncoder;
 import io.netty.handler.ssl.SslContext;
 import lombok.AllArgsConstructor;
-import lombok.Setter;
 
 @AllArgsConstructor
-public class TanmiaChatServerCreator extends ChannelInitializer<SocketChannel> {
+class TanmiaChatServerCreator extends ChannelInitializer<SocketChannel> {
     private SslContext sslContext;
     private TanmiaChatServer server;
 
 
     @Override
-    protected void initChannel(SocketChannel channel) throws Exception {
+    protected void initChannel(SocketChannel channel) {
         ChannelPipeline pipeline = channel.pipeline();
         pipeline.addLast(sslContext.newHandler(channel.alloc()));
         pipeline.addLast(new DelimiterBasedFrameDecoder(8192, Delimiters.lineDelimiter()));

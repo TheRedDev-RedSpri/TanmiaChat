@@ -13,7 +13,7 @@ import java.io.IOException;
 import java.net.URL;
 
 public abstract class Window {
-    public abstract URL getFXMLRessource();
+    protected abstract URL getFXMLRessource();
 
     public void open() throws IOException {
         Parent fxml = FXMLLoader.load(getFXMLRessource());

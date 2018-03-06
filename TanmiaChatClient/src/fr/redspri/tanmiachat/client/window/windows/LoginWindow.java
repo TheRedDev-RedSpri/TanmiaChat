@@ -8,6 +8,7 @@ import fr.redspri.tanmiachat.client.window.Window;
 import fr.redspri.tanmiachat.common.ClientSettings;
 import fr.redspri.tanmiachat.common.ServerSettings;
 import javafx.application.Platform;
+import javafx.fxml.FXML;
 import javafx.scene.Node;
 import javafx.scene.control.Label;
 import javafx.scene.input.MouseEvent;
@@ -20,11 +21,16 @@ import java.util.concurrent.TimeUnit;
 public class LoginWindow extends Window {
     private MouseEvent mouseEvent;
     public JFXButton button;
-    public JFXPasswordField password;
-    public JFXTextField username;
-    public JFXTextField port;
-    public JFXTextField ip;
-    public Label info;
+    @FXML
+    private JFXPasswordField password;
+    @FXML
+    private JFXTextField username;
+    @FXML
+    private JFXTextField port;
+    @FXML
+    private JFXTextField ip;
+    @FXML
+    private Label info;
 
     @Override
     public URL getFXMLRessource() {
@@ -64,7 +70,7 @@ public class LoginWindow extends Window {
 
     }
 
-    public boolean isInteger(String s) {
+    private boolean isInteger(String s) {
         if(s.isEmpty()) return false;
         for(int i = 0; i < s.length(); i++) {
             if(i == 0 && s.charAt(i) == '-') {

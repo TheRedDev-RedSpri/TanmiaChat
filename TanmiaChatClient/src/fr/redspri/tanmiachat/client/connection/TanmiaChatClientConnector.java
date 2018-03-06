@@ -24,8 +24,8 @@ public class TanmiaChatClientConnector {
 
 
     private LoginWindow loginWindow;
-    public static Channel ch = null;
-    public static ChannelFuture future = null;
+    private static Channel ch = null;
+    private static ChannelFuture future = null;
     ChatWindow chatWindow;
 
     public void connect(ClientSettings settings) throws Exception {
@@ -36,7 +36,7 @@ public class TanmiaChatClientConnector {
             Bootstrap boot = new Bootstrap();
             boot.group(group)
             .channel(NioSocketChannel.class)
-            .handler(new TanmiaChatClientCreator(sslContext, settings.getSettings(), this));
+                    .handler(new TanmiaChatClientCreator(sslContext, settings.getSettings()));
             ch = boot.connect(settings.getSettings().getHost(), settings.getSettings().getPort()).sync().channel();
             chatWindow = loginWindow.connected();
             future = null;

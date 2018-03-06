@@ -1,46 +1,45 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXTextArea?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.effect.Bloom?>
+<?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.paint.*?>
-<?import com.jfoenix.controls.*?>
-<?import javafx.scene.effect.*?>
-<?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
-
-<AnchorPane prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #0e0028;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="fr.redspri.tanmiachat.client.window.windows.ChatWindow">
-   <children>
-      <AnchorPane layoutY="308.0" prefHeight="92.0" prefWidth="600.0" style="-fx-background-color: #240068;">
-         <children>
-            <JFXButton focusTraversable="false" layoutX="489.0" layoutY="13.0" onMouseClicked="#send" prefHeight="66.0" prefWidth="97.0" style="-fx-background-color: RED;" text="ENVOYER" textFill="WHITE">
-               <ripplerFill>
-                  <RadialGradient centerX="0.5" centerY="0.5" radius="0.5">
-                     <stops>
-                        <Stop color="#34ff00" />
-                        <Stop color="#34ff00" offset="0.007662835249042145" />
-                        <Stop color="#00ff86" offset="1.0" />
-                     </stops>
-                  </RadialGradient>
-               </ripplerFill>
-            </JFXButton>
-            <JFXTextArea fx:id="tosend" focusTraversable="false" labelFloat="true" layoutX="14.0" layoutY="23.0" prefHeight="55.0" prefWidth="451.0" promptText="Message à envoyer...." style="-fx-text-inner-color: WHITE;" unFocusColor="WHITE" wrapText="true">
-               <focusColor>
-                  <LinearGradient endX="1.0" endY="1.0">
-                     <stops>
-                        <Stop color="RED" />
-                        <Stop color="#00ff86" offset="0.10344827586206894" />
-                        <Stop color="#ecff00" offset="1.0" />
-                     </stops>
-                  </LinearGradient>
-               </focusColor>
-            </JFXTextArea>
-         </children>
-      </AnchorPane>
-      <Label fx:id="content" alignment="TOP_LEFT" contentDisplay="TOP" layoutX="13.0" layoutY="14.0" prefHeight="283.0" prefWidth="575.0" text="Chargement..." textFill="WHITE" wrapText="true">
-         <effect>
-            <Bloom threshold="0.01" />
-         </effect>
-      </Label>
-   </children>
+<AnchorPane xmlns:fx="http://javafx.com/fxml/1" prefHeight="400.0" prefWidth="600.0"
+            style="-fx-background-color: #0e0028;" xmlns="http://javafx.com/javafx/8"
+            fx:controller="fr.redspri.tanmiachat.client.window.windows.ChatWindow">
+    <AnchorPane layoutY="308.0" prefHeight="92.0" prefWidth="600.0" style="-fx-background-color: #240068;">
+        <JFXButton focusTraversable="false" layoutX="489.0" layoutY="13.0" onMouseClicked="#send" prefHeight="66.0"
+                   prefWidth="97.0" style="-fx-background-color: RED;" text="ENVOYER" textFill="WHITE">
+            <ripplerFill>
+                <RadialGradient centerX="0.5" centerY="0.5" radius="0.5">
+                    <stops>
+                        <Stop color="#34ff00"/>
+                        <Stop color="#34ff00" offset="0.007662835249042145"/>
+                        <Stop color="#00ff86" offset="1.0"/>
+                    </stops>
+                </RadialGradient>
+            </ripplerFill>
+        </JFXButton>
+        <JFXTextArea fx:id="tosend" focusTraversable="false" labelFloat="true" layoutX="14.0" layoutY="23.0"
+                     prefHeight="55.0" prefWidth="451.0" promptText="Message à envoyer...."
+                     style="-fx-text-inner-color: WHITE;" unFocusColor="WHITE" wrapText="true">
+            <focusColor>
+                <LinearGradient>
+                    <stops>
+                        <Stop color="RED"/>
+                        <Stop color="#00ff86" offset="0.10344827586206894"/>
+                        <Stop color="#ecff00" offset="1.0"/>
+                    </stops>
+                </LinearGradient>
+            </focusColor>
+        </JFXTextArea>
+    </AnchorPane>
+    <Label fx:id="content" alignment="TOP_LEFT" contentDisplay="TOP" layoutX="13.0" layoutY="14.0" prefHeight="283.0"
+           prefWidth="575.0" text="Chargement..." textFill="WHITE" wrapText="true">
+        <effect>
+            <Bloom threshold="0.01"/>
+        </effect>
+    </Label>
 </AnchorPane>
