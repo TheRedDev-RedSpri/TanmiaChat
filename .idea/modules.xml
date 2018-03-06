@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/TanmiaChatClient/TanmiaChatClient.iml" filepath="$PROJECT_DIR$/TanmiaChatClient/TanmiaChatClient.iml" />
+      <module fileurl="file://$PROJECT_DIR$/TanmiaChatCommon/TanmiaChatCommon.iml" filepath="$PROJECT_DIR$/TanmiaChatCommon/TanmiaChatCommon.iml" />
+      <module fileurl="file://$PROJECT_DIR$/TanmiaChatServer/TanmiaChatServer.iml" filepath="$PROJECT_DIR$/TanmiaChatServer/TanmiaChatServer.iml" />
+    </modules>
+  </component>
+</project>
